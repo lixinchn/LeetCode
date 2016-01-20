@@ -1,1 +1,1 @@
-LeetCode
+LeetCode for algorithm practice.

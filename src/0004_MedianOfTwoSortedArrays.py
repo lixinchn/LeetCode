@@ -7,15 +7,22 @@ class Solution(object):
         if k == 1:
             return min(nums1[0], nums2[0])
 
+        '''
+        A的元素不够k/2. 则我们可以丢弃B前k/2. 反之亦然
+        '''
         if len(nums1) < k / 2:
             return self.findWorker(nums1, nums2[k / 2:], k - k / 2)
         if len(nums2) < k / 2:
             return self.findWorker(nums1[k / 2:], nums2, k - k / 2)
 
+        '''
+        A[mid] < B[mid] (mid是k / 2 - 1索引处的元素）这种情况下，我们可以丢弃 A 前 k / 2。
+        '''
         if nums1[k / 2 - 1] < nums2[k / 2 - 1]:
             return self.findWorker(nums1[k / 2:], nums2, k - k / 2)
         if nums1[k / 2 - 1] > nums2[k / 2 - 1]:
             return self.findWorker(nums1, nums2[k / 2:], k - k / 2)
+
         if nums1[k / 2 - 1] == nums2[k / 2 - 1]:
             return min(nums1[k - k / 2 - 1], nums2[k - k / 2 - 1])
 

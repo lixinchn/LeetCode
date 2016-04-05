@@ -22,6 +22,7 @@ class Solution(object):
             self.do(ret_arr, '', n, 0, 0, 0)
         return ret_arr
 
+
 if __name__ == "__main__":
     solution = Solution()
     print solution.generateParenthesis(2)

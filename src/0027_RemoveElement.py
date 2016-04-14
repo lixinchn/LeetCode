@@ -14,7 +14,6 @@ class Solution(object):
                 continue
             new_nums_point += 1
             nums[new_nums_point] = nums[i]
-        print nums
         return new_nums_point + 1
         
 

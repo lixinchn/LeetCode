@@ -5,9 +5,6 @@ class Solution(object):
         :type val: int
         :rtype: int
         """
-        if len(nums) == 0:
-            return 0
-
         new_nums_point = -1
         for i in range(len(nums)):
             if nums[i] == val:
@@ -19,5 +16,5 @@ class Solution(object):
 
 if __name__ == "__main__":
     solution = Solution()
-    nums = [3]
+    nums = []
     print solution.removeElement(nums, 3)
